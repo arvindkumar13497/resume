@@ -12,12 +12,8 @@ import { LoadingScreen } from '../components/layout/LoadingScreen'
 import { Navbar } from '../components/layout/Navbar'
 import { ScrollProgress } from '../components/layout/ScrollProgress'
 
-interface PortfolioPageProps {
-  theme: 'dark' | 'light'
-  toggleTheme: () => void
-}
 
-export function PortfolioPage({ theme, toggleTheme }: PortfolioPageProps) {
+export function PortfolioPage() {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
@@ -33,7 +29,7 @@ export function PortfolioPage({ theme, toggleTheme }: PortfolioPageProps) {
     <div className="app-shell">
       <ScrollProgress />
       <div className="aurora-layer" aria-hidden="true" />
-      <Navbar theme={theme} toggleTheme={toggleTheme} />
+      <Navbar />
       <main>
         <HeroSection />
         <AboutSection />
